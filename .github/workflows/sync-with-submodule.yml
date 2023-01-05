@@ -10,6 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      
+      - run: git config --global user.name "Github bot"
+      - run: git config --global user.email "bot@noreply.github.com"
+      
       - run: |
           for submodule in $(git submodule | awk '{print $2}'); do
             cd "$submodule"
